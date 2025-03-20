@@ -86,13 +86,16 @@ function FormAddFriend() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const id = crypto.randomUUID(); // for generating rondom Id
     const newFriend = {
-      id: crypto.randomUUID(), // for generating rodom Id
+      id,
       name,
-      image,
+      image: `${image}?=${id}`,
       balance: 0,
     };
     console.log(newFriend);
+    setName("");
+    setImage("https://i.pravatar.cc/48?u=118036");
   }
 
   return (
