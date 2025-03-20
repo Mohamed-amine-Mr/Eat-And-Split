@@ -5,13 +5,13 @@ const initialFriends = [
   {
     id: 118836,
     name: "Clark",
-    image: "https://i.pravatar.cc/48?u=118836",
+    image: "https://i.pravatar.cc/48?u=118036",
     balance: -7,
   },
   {
     id: 933372,
     name: "Sarah",
-    image: "https://i.pravatar.cc/48?u=933372",
+    image: "https://i.pravatar.cc/48?u=933172",
     balance: 20,
   },
   {
@@ -37,10 +37,17 @@ function FriendsList() {
   const friends = initialFriends;
   return (
     <ul>
-      {friends.map((friend) => (<Friend friend={friend} key={friend.id} />)())}
+      {friends.map((friend) => (
+        <Friend friend={friend} key={friend.id} />
+      ))}
     </ul>
   );
 }
 function Friend({ friend }) {
-  return <li>{friend.name}</li>;
+  return (
+    <li>
+      <img src={friend.image} alt={friend.name} />
+      <h3>{friend.name}</h3>
+    </li>
+  );
 }
