@@ -39,7 +39,9 @@ const App = () => {
       <div className="sidebar">
         <FriendsList />
         {showAddFriend && <FormAddFriend />}
-        <Button onClick={handleShowAddFriend}>Add friend</Button>
+        <Button onClick={handleShowAddFriend}>
+          {showAddFriend ? "close" : "Add friend"}
+        </Button>
       </div>
       <FormSplitBill />
     </div>
