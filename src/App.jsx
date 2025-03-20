@@ -30,6 +30,7 @@ const App = () => {
         <FormAddFriend />
         <Button>Add friend</Button>
       </div>
+      <FormSplitBill />
     </div>
   );
 };
@@ -77,6 +78,25 @@ function FormAddFriend() {
       <label>🌄 Image URL</label>
       <input type="text" />
       <Button>Add</Button>
+    </form>
+  );
+}
+
+function FormSplitBill() {
+  return (
+    <form className="form-split-bill">
+      <h2>Split a bill with x</h2>
+
+      <label>🧍‍♀️ Your expense</label>
+      <input type="text" />
+
+      <label>👫 X expense</label>
+      <input type="text" />
+
+      <label>💰 Bill value</label>
+      <input type="text" />
+
+      <Button>Split bill</Button>
     </form>
   );
 }
