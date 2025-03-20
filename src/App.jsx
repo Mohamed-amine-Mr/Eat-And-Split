@@ -28,7 +28,6 @@ const App = () => {
       <div className="sidebar">
         <FriendsList />
         <FormAddFriend />
-
         <Button>Add friend</Button>
       </div>
     </div>
@@ -72,11 +71,12 @@ function Button({ children }) {
 function FormAddFriend() {
   return (
     <form className="form-add-friend">
-      <label>Friend name</label>
+      <label>👫 Friend name</label>
       <input type="text" />
 
-      <label>Image URL</label>
+      <label>🌄 Image URL</label>
       <input type="text" />
+      <Button>Add</Button>
     </form>
   );
 }
