@@ -86,6 +86,13 @@ function FormAddFriend() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const newFriend = {
+      id: crypto.randomUUID(), // for generating rodom Id
+      name,
+      image,
+      balance: 0,
+    };
+    console.log(newFriend);
   }
 
   return (
