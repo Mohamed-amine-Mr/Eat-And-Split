@@ -36,12 +36,16 @@ const App = () => {
   function handleShowAddFriend() {
     setShowAddFriend((show) => !show);
   }
+  // lets gives Form ability to add new friend
+  function handleAddFriend(friend) {
+    setFriends((friends) => [...friends, friend]);
+  }
 
   return (
     <div className="app">
       <div className="sidebar">
         <FriendsList friends={friends} />
-        {showAddFriend && <FormAddFriend />}
+        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
         <Button onClick={handleShowAddFriend}>
           {showAddFriend ? "close" : "Add friend"}
         </Button>
@@ -82,13 +86,15 @@ function Friend({ friend }) {
   );
 }
 
-function FormAddFriend() {
+function FormAddFriend({ onAddFriend }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48?u=118036");
 
   function handleSubmit(e) {
-    if (!name || !image) return;
     e.preventDefault();
+
+    if (!name || !image) return;
+
     const id = crypto.randomUUID(); // for generating rondom Id
     const newFriend = {
       id,
@@ -96,7 +102,9 @@ function FormAddFriend() {
       image: `${image}?=${id}`,
       balance: 0,
     };
-    console.log(newFriend);
+
+    onAddFriend(newFriend);
+
     setName("");
     setImage("https://i.pravatar.cc/48?u=118036");
   }
