@@ -28,7 +28,11 @@ function Button({ children, onClick }) {
     </button>
   );
 }
+
 const App = () => {
+  function handleShowAddFriend() {
+    setShowAddFriend((show) => !show);
+  }
   const [showAddFriend, setShowAddFriend] = useState(false);
   return (
     <div className="app">
@@ -42,8 +46,6 @@ const App = () => {
   );
 };
 export default App;
-
-function handleShowAddFriend() {}
 
 function FriendsList() {
   const friends = initialFriends;
