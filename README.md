@@ -87,5 +87,4 @@ This project is licensed under the MIT License.
 
 For any inquiries, feel free to reach out:
 
-- GitHub: [your-username](https://github.com/your-username)
-- Email: your-email@example.com
+- GitHub: [Mohamed-amine-Mr](https://github.com/Mohamed-amine-Mr/)
